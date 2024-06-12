@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #48a30012 ;
+    font-family: "Poppins";
+}
+
+#heading{
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color: #48A300;
+    margin-bottom: 1em;
+}
+
+#today{
+    color: #61481C;
+}
+
+.content{
+    max-width: 660px;
+    /* height: 710px; */
+    background-color: white;
+    margin-inline: auto;
+    border-radius: 15px;
+    padding: 1em 43px;
+}
+
+.tag{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+
+}
+.tag > h2{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.sun-container{
+    position: relative;
+}
+
+.tag img{
+    height: 50px;
+}
+
+#sun-face{
+    height: 13px;
+    position: absolute;
+    left: 18px;
+    top: 20px;
+}
+
+#sun-outline{
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#motivation{
+    font-size: 14px;
+    color: rgb(133, 133, 133);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    height: 3em;
+}
+
+.progress-bar{
+    height: 30px;
+    width: 574px;
+    background-color: rgba(73, 163, 0, 0.1);
+    border-radius: 15px;
+}
+.progress-level{
+    height: 100%;
+    width: 0;
+    background-color: #48A300;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: width 0.5s ease-in-out;
+}
+
+#progress-value{
+    font-size: 10px;
+    color: white;
+    min-width: max-content;
+}
+
+#progress-value span{
+    padding-left: 1em;
+}
+
+#warning{
+    font-size: 14px;
+    color: #FF5151;
+    margin: 2em 0 1em 0;
+    visibility: hidden;
+}
+
+.show-error #warning{
+    visibility: initial;
+}
+
+.goal-container{
+    height: 82px;
+    width: 570px;
+    background-color: white;
+    border-radius: 17px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: 1em;
+    margin-bottom: 2em;
+}
+
+.checkbox{
+    height: 24px;
+    width: 24px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#check{
+    display: none;
+}
+
+.completed .checkbox{
+    background-color: #48A300;
+    border-color: #48A300;
+}
+
+.completed #check{
+    display: initial;
+}
+
+input{
+    width: 364px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: "Poppins";
+    flex-grow: 1;
+    padding-left: 1.5em;
+    align-self: stretch;
+}
+
+input::placeholder {
+    color: #D9D9D9;
+    opacity: 1;
+}
+
+.completed input{
+    color: #48A300;
+    text-decoration: line-through;
+}
+#quote{
+    font-size: 1em;
+    text-align: center;
+}
+
+#ending{
+    font-size: 10px;
+    color: #858585;
+    text-align: center;
+    margin-top: 6em;
+}
+
+#clear-btn{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 24px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 16px;
+    background-color: #48A300;
+    color: white;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+  
+@media(max-width: 768px){
+    #heading{
+        font-size: 2em;
+        margin-bottom: 2em;
+    }
+
+    main{
+        padding-inline: 10px;
+    }
+
+    .content{
+        padding: 1em 24px;
+    }
+
+    .progress-bar{
+        height: 20px;
+        width: 100%;
+    }
+
+    .goal-container{
+        height: 64px;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    input{
+        width: 80%;
+    }
+
+    #progress-value{
+        font-size: 10px;
+    }
+
+    #clear-btn{
+        font-size: 20px;
+        padding: 0.5em;
+    }
+}
